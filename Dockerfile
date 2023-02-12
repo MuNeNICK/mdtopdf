@@ -8,10 +8,10 @@ RUN apt update && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb && \
-        dpkg -i pandoc-2.7.2-1-amd64.deb && \
-        wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.4.1/linux-pandoc_2_7_2.tar.gz && \
-        tar -zxvf linux-pandoc_2_7_2.tar.gz && \
+RUN wget https://github.com/jgm/pandoc/releases/download/3.0/pandoc-3.0-1-amd64.deb && \
+        dpkg -i pandoc-3.0-1-amd64.deb && \
+        wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.15.0/pandoc-crossref-Linux.tar.xz && \
+        tar Jxfv pandoc-crossref-Linux.tar.xz && \
         mv pandoc-crossref /usr/local/bin
 
 RUN kanji-config-updmap-sys ipaex
