@@ -84,3 +84,24 @@ $ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtodocx INPUT.md
 ```
 
 [example converted docx](examples/example.docx)
+
+## Update 2023/02/12
+### Functional Updates
+Allow the type of report to be specified as the second argument.
+```
+jarticle jreport jsbook
+```
+
+example
+```
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtohtml INPUT.md jreport
+```
+
+If nothing is specified for the second argument, jsarticle is automatically set.
+
+### Other Updates
+- Update pandoc version 2.7 to 3.0
+
+### Thanks
+Forked.
+Thanks to https://github.com/p1ass
