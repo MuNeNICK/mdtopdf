@@ -10,6 +10,6 @@ while true; do
                 echo ""
                 echo "updated: $current"
                 last=$current
-                eval $2 $3
+                eval $2 $3 $4
         fi
 done
