@@ -1,6 +1,16 @@
 #!/bin/bash
-str=$1
-pandoc -s -N ${str%.*}.md -o ${str%.*}.pdf -V documentclass=ltjarticle --pdf-engine=lualatex \
+
+name=$1
+
+if [ -z "$2" ] || [ "$2" != "jarticle" ] && [ "$2" != "jreport" ] && [ "$2" != "jsbook" ]; then
+  type="jarticle"
+elif [ "$2" = "jreport" ] || [ "$2" = "jsbook" ]; then
+  type="$2 --top-level-division=chapter"
+else
+  type="$2"
+fi
+
+pandoc -s -N ${name%.*}.md -o ${name%.*}.pdf -V documentclass=lt${type} --pdf-engine=lualatex \
 -F pandoc-crossref \
 -M "crossrefYaml=/config/crossref_config.yaml" \
 -V geometry:margin=1in -H /config/listings-setup.tex
