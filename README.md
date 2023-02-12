@@ -92,9 +92,14 @@ Allow the type of report to be specified as the second argument.
 jarticle jreport jsbook
 ```
 
-example
+Example
 ```
-$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtohtml INPUT.md jreport
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtopdf INPUT.md jreport
+```
+
+For w-mdtopdf
+```
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf w-mdtopdf INPUT.md jreport
 ```
 
 If nothing is specified for the second argument, jsarticle is automatically set.
